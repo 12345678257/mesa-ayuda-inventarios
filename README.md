@@ -14,3 +14,8 @@ streamlit run app_mesa_ayuda_inventarios_streamlit.py
    APP_SMTP_PASSWORD="tu_password_smtp"
    ```
 4. Deploy. Luego configura SMTP en **Configuración → Notificaciones**.
+
+
+## Despliegue con disco persistente
+- Ver **DEPLOY_RENDER.md** (Render)
+- Ver **DEPLOY_RAILWAY.md** (Railway)
