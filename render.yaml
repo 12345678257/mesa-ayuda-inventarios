@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: mesa-ayuda-inventarios-enterprise-plus
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app_mesa_ayuda_inventarios_streamlit.py --server.port $PORT --server.address 0.0.0.0
+    autoDeploy: true
+    disk:
+      name: data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: APP_DB_PATH
+        value: /var/data/inventarios_helpdesk.db
+      - key: APP_SMTP_PASSWORD
+        sync: false
+      - key: APP_SSO_SECRET
+        sync: false
