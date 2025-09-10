@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: mesa-ayuda-itil-enterprise-plus
+    env: docker
+    disk:
+      name: data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: APP_DB_PATH
+        value: /var/data/inventarios_helpdesk.db
+      - key: SSO_SHARED_SECRET
+        sync: false
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        value: "587"
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASSWORD
+        sync: false
+      - key: SLACK_WEBHOOK_URL
+        sync: false
+      - key: TEAMS_WEBHOOK_URL
+        sync: false
+      - key: DISCORD_WEBHOOK_URL
+        sync: false
